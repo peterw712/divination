@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divination Tool</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Matching Tool</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
-        <h1 class="text-2xl font-bold mb-4">Divination Tool</h1>
-        <div>
-            <label for="list1" class="block text-gray-700">List 1 (comma-separated words):</label>
-            <textarea id="list1" class="w-full p-2 border rounded mb-4"></textarea>
-        </div>
-        <div>
-            <label for="list2" class="block text-gray-700">List 2 (comma-separated words):</label>
-            <textarea id="list2" class="w-full p-2 border rounded mb-4"></textarea>
-        </div>
-        <button id="divineButton" class="bg-blue-500 text-white px-4 py-2 rounded">Divine</button>
-        <div id="results" class="mt-4"></div>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
+    <h1 class="text-2xl font-bold mb-4">Word Matching Tool</h1>
+    <form id="wordForm" class="space-y-4">
+      <div>
+        <label for="listOne" class="block text-gray-700">List One (comma separated):</label>
+        <input type="text" id="listOne" class="w-full p-2 border border-gray-300 rounded" required>
+      </div>
+      <div>
+        <label for="listTwo" class="block text-gray-700">List Two (comma separated):</label>
+        <input type="text" id="listTwo" class="w-full p-2 border border-gray-300 rounded" required>
+      </div>
+      <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Generate Matches</button>
+    </form>
+    <div id="results" class="mt-6">
+      <h2 class="text-xl font-semibold mb-2">Matches:</h2>
+      <ul id="matchesList" class="list-disc list-inside"></ul>
     </div>
-    <script src="script.js"></script>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
